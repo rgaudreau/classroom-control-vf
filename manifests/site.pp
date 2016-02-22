@@ -48,6 +48,6 @@ ensure => file,
 owner => 'root',
 group => 'root',
 mode => '0644',
-content => "Today I'm having fun with the file class.\n",
+content => "Today I'm having a lot fun with the file class.\n",
 }
 }
