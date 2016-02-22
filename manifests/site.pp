@@ -47,7 +47,7 @@ file { '/etc/motd':
   owner   => 'root',
   group   => 'root',
   mode    => '0644',
-  content => "Wow... Puppet Time!\n",
+  content => "Wow... Puppet Time!!\n",
 }
 
 }
