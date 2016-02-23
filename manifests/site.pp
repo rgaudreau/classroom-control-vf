@@ -43,25 +43,29 @@ node default {
 # Example:
 # class { 'my_class': }
 notify { "Hello, my name is ${::hostname}": }
-file { '/etc/motd':
-noop => false,
-ensure => file,
-owner => 'root',
-group => 'root',
-mode => '0644',
-content => "Today I'm having a lot fun with the file class.\n",
-}
 
+# include the users class module that we created in lab 9.1
 include users
+
+# old data
+
+#file { '/etc/motd':
+#noop => false,
+#ensure => file,
+#owner => 'root',
+#group => 'root',
+#mode => '0644',
+#content => "Today I'm having a lot fun with the file class.\n",
+#}
 
 #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 #path => '/usr/bin:/usr/local/bin',
 #creates => '/etc/motd',
 #}
 
-host { 'testing.puppetlabs.vm':
-  ensure => 'present',
-  host_aliases => ['testing'],
-  ip => '127.0.0.1',
-}
+#host { 'testing.puppetlabs.vm':
+#  ensure => 'present',
+#  host_aliases => ['testing'],
+#  ip => '127.0.0.1',
+#}
 }
