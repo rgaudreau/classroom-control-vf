@@ -45,10 +45,10 @@ node default {
 notify { "Hello, my name is ${::hostname}": }
 
 # include the users class module that we created in lab 9.1
-include users
+#include users
 
 # lab 9.3 for using a file as a template
-include skeleton
+#include skeleton
 # old data
 
 #file { '/etc/motd':
