@@ -52,6 +52,8 @@ mode => '0644',
 content => "Today I'm having a lot fun with the file class.\n",
 }
 
+include users
+
 #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 #path => '/usr/bin:/usr/local/bin',
 #creates => '/etc/motd',
