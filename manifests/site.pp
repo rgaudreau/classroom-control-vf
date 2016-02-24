@@ -44,6 +44,12 @@ node default {
 # class { 'my_class': }
 notify { "Hello, my name is ${::hostname}": }
 
+
+if $::is_virtual = 'true' {
+$vmname = capitalize($::virtual)
+notify { "This is a ${vmname} virtual machine.": }
+}
+
 # include the users class module that we created in lab 9.1
 #include users
 
