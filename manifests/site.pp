@@ -47,13 +47,16 @@ notify { "Hello, my name is ${::hostname}": }
 $message = hiera('message')
 notify { $message: }
 
+class { 'nginx':
+root => '/var/www/html',
+}
 
 include users::admins
 
-if $::virtual != 'physical' {
-$vmname = capitalize($::virtual)
-notify { "This is a ${vmname} virtual machine.": }
-}
+#if $::virtual != 'physical' {
+#$vmname = capitalize($::virtual)
+#notify { "This is a ${vmname} virtual machine.": }
+#}
 
 # include the users class module that we created in lab 9.1
 #include users
